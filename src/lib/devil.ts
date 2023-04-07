@@ -7,8 +7,11 @@ import { checks } from './checks';
 import { file } from './filesystem';
 import { loggers } from './loggers';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const chalk = require("chalk");
 // TODO: Inspect, trace, in, out, cache
 export const devil = {
+  chalk,
   _rootDir: process.env.DEVIL_DIR || cwd(),
   setRootDir: function (dir: string) {
     // eslint-disable-next-line functional/immutable-data, functional/no-this-expression
