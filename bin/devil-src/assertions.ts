@@ -8,7 +8,7 @@
  * 
  * #### Usage
  * ```js
- * import { devel } from 'devel';
+ * import { devil } from 'devil';
  * 
  * type Foo = {
  *  bar: string
@@ -17,13 +17,13 @@
  * const foo:Foo | null = maybeFoo(); // returns a value or null or undefined
  * 
  * // Will throw new Error if foo is null or undefined
- * devel.assert.exists(foo, 'foo is null or undefined');
+ * devil.asserts.exists(foo, 'foo is null or undefined');
  * 
  * // foo is now narrowed to Foo, so we won't get a type error here
  * console.log(foo.bar);
  * ```
  * #### Related 
- * - **devel.check.exists** returns a boolean instead of throwing and can still be used for type errors
+ * - **devil.checks.exists** returns a boolean instead of throwing and can still be used for type errors
  * 
  * @param input the value to check if it's not null or undefined
  * @param message, this is the message of the error that will get thrown if the assertion is broken
@@ -45,20 +45,20 @@ function exists<T>(
  * 
  * #### Usage
  * ```js
- * import { devel } from 'devel';
+ * import { devil } from 'devil';
  * 
- * const foo = devel.read<('foo.json')
+ * const foo = devil.read<('foo.json')
  * 
  * const foo:Foo | null = maybeFoo(); // returns a value or null or undefined
  * 
  * // Will throw new Error if foo is null or undefined
- * devel.assert.exists(foo, 'foo is null or undefined');
+ * devil.assert.exists(foo, 'foo is null or undefined');
  * 
  * // foo is now narrowed to Foo, so we won't get a type error here
  * console.log(foo.bar);
  * ```
  * #### Related 
- * - **devel.check.exists** returns a boolean instead of throwing and can still be used for type errors
+ * - **devil.check.exists** returns a boolean instead of throwing and can still be used for type errors
  * 
  * @param input the value to check if it's not null or undefined
  * @param message, this is the message of the error that will get thrown if the assertion is broken

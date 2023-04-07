@@ -14,7 +14,7 @@ const prefix = '👺';
 // this relies on a lot of what console.logs natural functionality is
 
 /**
- * A Replacement for console.log, just with the Devel prefix so you can have it stand out against other logs.
+ * A Replacement for console.log, just with the Devil prefix so you can have it stand out against other logs.
  * @param data What you want to log (just like console.log)
  */
 export const log = (first?: unknown, ...data: unknown[]) => {

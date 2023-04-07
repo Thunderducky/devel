@@ -9,8 +9,8 @@ import { loggers } from "./loggers";
 
 
 // TODO: Inspect, trace, in, out, cache
-export const devel = {
-  _rootDir: process.env.DEVEL_DIR || cwd(),
+export const devil = {
+  _rootDir: process.env.DEVIL_DIR || cwd(),
   setRootDir: function (dir: string) {
     // eslint-disable-next-line functional/immutable-data, functional/no-this-expression
     this._rootDir = dir;
@@ -19,7 +19,7 @@ export const devel = {
   read: function (title: string) {
     // eslint-disable-next-line functional/no-this-expression
     const root = this._rootDir
-    const fullPath = path.join(root, `${title}.devel.jsonc`);
+    const fullPath = path.join(root, `${title}.devil.jsonc`);
     return file.read(fullPath);
   },
 
@@ -28,7 +28,7 @@ export const devel = {
   }) {
     // eslint-disable-next-line functional/no-this-expression
     const root = this._rootDir
-    const fullPath = path.join(root, `${title}.devel.jsonc`);
+    const fullPath = path.join(root, `${title}.devil.jsonc`);
     cache(fullPath, fnToCache, bustCache, cacheOptions)
   },
 

@@ -11,7 +11,6 @@ const long_flags = args
 const targetRoot = process.cwd();
 const packageRoot = __dirname;
 
-
 function leftTrimmed(strings, ...values) {
   // Interweave the strings with the
   // substitution vars first.
@@ -65,7 +64,7 @@ function injectDevil() {
     relativePath = 'src';
   }
   const fullPath = path.join(targetRoot, relativePath, 'devil');
-  // create a folder at relativePath called 'devel'
+  // create a folder at relativePath called 'devil'
   if (fs.pathExistsSync(fullPath)) {
     console.log('\n👺 Devil has already been injected, skipping...');
     return;
