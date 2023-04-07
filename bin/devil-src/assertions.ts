@@ -5,26 +5,26 @@
  * Assert a value is not null or undefined.
  * Throws an error if the value is null or undefined.
  * This is useful for type narrowing for typescript
- * 
+ *
  * #### Usage
  * ```js
  * import { devil } from 'devil';
- * 
+ *
  * type Foo = {
  *  bar: string
  * };
- * 
+ *
  * const foo:Foo | null = maybeFoo(); // returns a value or null or undefined
- * 
+ *
  * // Will throw new Error if foo is null or undefined
  * devil.asserts.exists(foo, 'foo is null or undefined');
- * 
+ *
  * // foo is now narrowed to Foo, so we won't get a type error here
  * console.log(foo.bar);
  * ```
- * #### Related 
+ * #### Related
  * - **devil.checks.exists** returns a boolean instead of throwing and can still be used for type errors
- * 
+ *
  * @param input the value to check if it's not null or undefined
  * @param message, this is the message of the error that will get thrown if the assertion is broken
  */
@@ -42,24 +42,24 @@ function exists<T>(
  * Assert a value is not a string, commonly combined with the fileSystem.read function
  * Throws an error if the value is a string.
  * This is useful for type narrowing for typescript
- * 
+ *
  * #### Usage
  * ```js
  * import { devil } from 'devil';
- * 
+ *
  * const foo = devil.read<('foo.json')
- * 
+ *
  * const foo:Foo | null = maybeFoo(); // returns a value or null or undefined
- * 
+ *
  * // Will throw new Error if foo is null or undefined
  * devil.assert.exists(foo, 'foo is null or undefined');
- * 
+ *
  * // foo is now narrowed to Foo, so we won't get a type error here
  * console.log(foo.bar);
  * ```
- * #### Related 
+ * #### Related
  * - **devil.check.exists** returns a boolean instead of throwing and can still be used for type errors
- * 
+ *
  * @param input the value to check if it's not null or undefined
  * @param message, this is the message of the error that will get thrown if the assertion is broken
  */
@@ -74,5 +74,5 @@ function notString<T>(
 
 export const asserts = {
   exists,
-  notString
-}
+  notString,
+};
