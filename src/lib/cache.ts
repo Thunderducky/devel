@@ -1,13 +1,13 @@
 /* eslint-disable functional/prefer-readonly-type */
 
-import chalk from "chalk";
+import chalk from 'chalk';
 
-import { checks } from "./checks";
-import { _readJsonLike, file, forceErrorType } from "./filesystem";
-import { log } from "./loggers";
+import { checks } from './checks';
+import { _readJsonLike, file, forceErrorType } from './filesystem';
+import { log } from './loggers';
 
 /**
- * This function is intended to be used to cache the results of a function. 
+ * This function is intended to be used to cache the results of a function.
  * It will first try to read the file from the cache. If it fails, it will run the function and write the result to the cache.
  * It's largely used to do things like cache the results of an API/DB call or other expensive operation
  * An important note is that it does stringify and parse the results, this can be particularly problematic for dates
@@ -22,15 +22,16 @@ export const cache = async <TCacheValue extends Exclude<unknown, string>>(
   fnToCache: () => Promise<TCacheValue>,
   bustCache = false,
   _options: Partial<{
-    skipCache: boolean,
+    skipCache: boolean;
   }> = {
-      skipCache: false,
-    }): Promise<TCacheValue> => {
+    skipCache: false,
+  }
+): Promise<TCacheValue> => {
   const options = {
     ...{
       skipCache: false,
     },
-    ..._options
+    ..._options,
   };
   try {
     const value =
@@ -43,18 +44,21 @@ export const cache = async <TCacheValue extends Exclude<unknown, string>>(
     }
     if (checks.notString(value)) {
       return value;
-    }
-    else {
+    } else {
       // eslint-disable-next-line functional/no-throw-statement
-      throw new Error("Unexpected string result from cache, this is likely a bug")
+      throw new Error(
+        'Unexpected string result from cache, this is likely a bug'
+      );
     }
-
   } catch (e: unknown) {
-    const error = forceErrorType(e)
-    log(`${chalk.red("Error")} using cache at${chalk.blue(fullPath)}`, error.message);
+    const error = forceErrorType(e);
+    log(
+      `${chalk.red('Error')} using cache at${chalk.blue(fullPath)}`,
+      error.message
+    );
     // eslint-disable-next-line functional/no-throw-statement
     throw error;
   }
-}
+};
 
-cache("", () => Promise.resolve(""));
+cache('', () => Promise.resolve(''));

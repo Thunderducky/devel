@@ -17,7 +17,7 @@ test('checks - exists', (t) => {
 
 const { notString } = checks;
 test('checks - notString', (t) => {
-  t.false(() => notString(""), 'strings return false');
+  t.false(() => notString(''), 'strings return false');
   t.true(() => notString(0), '0 should return true');
   t.true(() => notString(null), '0 should return true');
   t.true(() => notString(false), '0 should return true');
