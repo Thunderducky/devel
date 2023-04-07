@@ -7,7 +7,7 @@
   "module": "build/module/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_GITHUB_USER_NAME/devel.git"
+    "url": "git+https://github.com/thunderducky/devil.git"
   },
   "license": "MIT",
   "keywords": [],
@@ -114,8 +114,8 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/YOUR_GITHUB_USER_NAME/devel/issues"
+    "url": "https://github.com/Thunderducky/devil/issues"
   },
-  "homepage": "https://github.com/YOUR_GITHUB_USER_NAME/devel#readme",
+  "homepage": "https://github.com/Thunderducky/devil#readme",
   "author": "Eric Scott"
 }
