@@ -1,10 +1,14 @@
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/prefer-readonly-type */
-import chalk from 'chalk';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+
 
 import { get as stackGet } from './stack-helper';
 
 import { log } from './index';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const chalk = require('chalk');
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const shortTrace = (location: any) => `${location.getFileName()}`;

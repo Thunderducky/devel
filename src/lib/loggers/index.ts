@@ -2,9 +2,10 @@
 /* eslint-disable functional/prefer-readonly-type */
 import { inspect as _inspect } from 'util';
 
-import chalk from 'chalk';
-
 import { trace } from './trace';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const chalk = require('chalk');
 
 // TODO: allow override
 const prefix = '👺';
