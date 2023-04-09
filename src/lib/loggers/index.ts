@@ -44,5 +44,5 @@ const inspect = (...data: unknown[]) => {
 export const loggers = {
   log,
   dim,
-  inspect
+  inspect,
 };

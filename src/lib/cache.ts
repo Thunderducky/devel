@@ -4,7 +4,7 @@ import { _readJsonLike, file, forceErrorType } from './filesystem';
 import { log } from './loggers';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const chalk = require("chalk");
+const chalk = require('chalk');
 
 /**
  * This function is intended to be used to cache the results of a function.
@@ -24,8 +24,8 @@ export const cache = async <TCacheValue extends Exclude<unknown, string>>(
   _options: Partial<{
     skipCache: boolean;
   }> = {
-      skipCache: false,
-    }
+    skipCache: false,
+  }
 ): Promise<TCacheValue> => {
   const options = {
     ...{

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { loggers } from './index.js';
+import { loggers } from './';
 
 test('loggers - smoke test', (t) => {
   t.notThrows(() => loggers.log("hello world"));

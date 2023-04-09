@@ -8,7 +8,7 @@ import { file } from './filesystem';
 import { loggers } from './loggers';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const chalk = require("chalk");
+const chalk = require('chalk');
 // TODO: Inspect, trace, in, out, cache
 export const devil = {
   chalk,
