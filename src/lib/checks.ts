@@ -28,7 +28,7 @@ const exists = <T>(
   input: T
   // eslint-disable-next-line @typescript-eslint/ban-types
 ): input is T & {} => {
-  return input === null || input === undefined;
+  return !(input === null || input === undefined);
 };
 
 const notString = <T>(input: T | string): input is T => {

@@ -17,7 +17,7 @@ export const forceErrorType = (e: unknown) => {
   return new Error('Unknown error');
 };
 
-// Fix BigInts for JSON.stringify
+// Fix Big Integers for JSON.stringify
 function bigIntFixer<T, U>(_key: T, value: U) {
   return typeof value === 'bigint' ? value.toString() : value; // return everything else unchanged
 }
