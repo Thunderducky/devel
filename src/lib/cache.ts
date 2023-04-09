@@ -24,8 +24,8 @@ export const cache = async <TCacheValue extends Exclude<unknown, string>>(
   _options: Partial<{
     skipCache: boolean;
   }> = {
-    skipCache: false,
-  }
+      skipCache: false,
+    }
 ): Promise<TCacheValue> => {
   const options = {
     ...{
@@ -60,5 +60,3 @@ export const cache = async <TCacheValue extends Exclude<unknown, string>>(
     throw error;
   }
 };
-
-cache('', () => Promise.resolve(''));

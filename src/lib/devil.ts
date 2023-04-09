@@ -1,5 +1,4 @@
 import path from 'path';
-import { cwd } from 'process';
 
 import { asserts } from './assertions';
 import { cache } from './cache';
@@ -12,7 +11,7 @@ const chalk = require('chalk');
 // TODO: Inspect, trace, in, out, cache
 export const devil = {
   chalk,
-  _rootDir: process.env.DEVIL_DIR || cwd(),
+  _rootDir: process.env.DEVIL_DIR || process.cwd(),
   setRootDir: function (dir: string) {
     // eslint-disable-next-line functional/immutable-data, functional/no-this-expression
     this._rootDir = dir;
