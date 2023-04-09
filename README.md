@@ -1,4 +1,4 @@
-# Dev Integrated Library
+# Dev Integrated Library 🚧 (Under construction while I figure out how to publish node modules, don't use)
 Developer Integrated Library
 
 ## Goal
