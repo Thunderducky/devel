@@ -98,7 +98,7 @@ export const _readJsonLike = async <T = unknown>(
  * @param fullPath The full path of the file being read
  * @returns the results of the file
  */
-const exists = (fullPath: string) => {
+const fileExists = (fullPath: string) => {
   // log(`Checking if ${chalk.yellow(title)} exists at ${chalk.blue(fullPath)}`);
   try {
     return existsSync(fullPath);
@@ -139,6 +139,6 @@ const write = (fullPath: string, data: unknown) => {
 
 export const file = {
   read,
-  exists,
+  fileExists,
   write,
 };

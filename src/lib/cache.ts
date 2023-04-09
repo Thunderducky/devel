@@ -1,5 +1,4 @@
 /* eslint-disable functional/prefer-readonly-type */
-import { checks } from './checks';
 import { _readJsonLike, file, forceErrorType } from './filesystem';
 import { log } from './loggers';
 
@@ -24,8 +23,8 @@ export const cache = async <TCacheValue extends Exclude<unknown, string>>(
   _options: Partial<{
     skipCache: boolean;
   }> = {
-    skipCache: false,
-  }
+      skipCache: false,
+    }
 ): Promise<TCacheValue> => {
   const options = {
     ...{
@@ -35,21 +34,14 @@ export const cache = async <TCacheValue extends Exclude<unknown, string>>(
   };
   try {
     const value =
-      !bustCache && checks.exists(fullPath)
+      !bustCache && file.fileExists(fullPath)
         ? await _readJsonLike<TCacheValue>(fullPath)
         : await fnToCache();
     // If you want to cache a string result it'll need a workaround :shrug:
     if (!options.skipCache) {
       await file.write(fullPath, value);
     }
-    if (checks.notString(value)) {
-      return value;
-    } else {
-      // eslint-disable-next-line functional/no-throw-statement
-      throw new Error(
-        'Unexpected string result from cache, this is likely a bug'
-      );
-    }
+    return value;
   } catch (e: unknown) {
     const error = forceErrorType(e);
     log(

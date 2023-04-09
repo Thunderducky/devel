@@ -31,11 +31,11 @@ export const devil = {
     cacheOptions: {
       readonly skipCache: boolean;
     }
-  ) {
+  ): Promise<T> {
     // eslint-disable-next-line functional/no-this-expression
     const root = this._rootDir;
     const fullPath = path.join(root, `${title}.devil.jsonc`);
-    cache(fullPath, fnToCache, bustCache, cacheOptions);
+    return cache(fullPath, fnToCache, bustCache, cacheOptions);
   },
 
   write: function (title: string, data: unknown) {
