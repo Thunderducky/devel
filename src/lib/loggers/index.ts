@@ -2,8 +2,6 @@
 /* eslint-disable functional/prefer-readonly-type */
 import { inspect as _inspect } from 'util';
 
-import { trace } from './trace';
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const chalk = require('chalk');
 
@@ -46,6 +44,5 @@ const inspect = (...data: unknown[]) => {
 export const loggers = {
   log,
   dim,
-  inspect,
-  trace,
+  inspect
 };
